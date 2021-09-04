@@ -15,4 +15,5 @@ public class ParkingDto {
     private int place;
     private Date startDate;
     private Date endDate;
+    private boolean onPark;
 }

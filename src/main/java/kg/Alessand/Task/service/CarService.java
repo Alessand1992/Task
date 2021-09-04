@@ -13,4 +13,5 @@ public interface CarService {
     CarDto findById(Long id);
     CarDto findByNumber(String number);
 
+    CarDto findById();
 }

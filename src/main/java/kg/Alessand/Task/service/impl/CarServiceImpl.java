@@ -34,4 +34,9 @@ public class CarServiceImpl implements CarService {
     public CarDto findByNumber(String number) {
         return null;
     }
+
+    @Override
+    public CarDto findById() {
+        return null;
+    }
 }
