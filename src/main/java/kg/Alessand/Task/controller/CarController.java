@@ -5,10 +5,7 @@ import kg.Alessand.Task.model.Car;
 import kg.Alessand.Task.model.dto.CarDto;
 import kg.Alessand.Task.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,17 +19,17 @@ public class CarController {
     @Autowired
     private CarService carService;
 
-    @PostMapping("/save")
+    @PutMapping("/save")
     private CarDto save(@ModelAttribute CarDto carDto){
         return carService.save(carDto);
     }
 
-    @PostMapping("/findAll")
-    private List<Car> findAll(@ModelAttribute CarDto carDto){
+    @GetMapping("/findAll")
+    private List<Car> findAll(){
         return carService.findAll();
     }
-    @PostMapping("/findById")
-    private CarDto findById(@ModelAttribute CarDto carDto){
+    @GetMapping("/findById")
+    private CarDto findById(){
         return carService.findById();
     }
 }
