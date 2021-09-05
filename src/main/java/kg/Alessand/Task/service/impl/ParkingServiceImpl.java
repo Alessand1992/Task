@@ -8,6 +8,7 @@ import kg.Alessand.Task.service.ParkingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.List;
 @Service
@@ -25,6 +26,7 @@ public class ParkingServiceImpl implements ParkingService {
         parking = parkingRepo.save(parking);
         return ParkingMapper.INSTANCE.toParkingDto(parking);
     }
+
 
     @Override
     public ParkingDto update(ParkingDto parkingDto) {
@@ -64,6 +66,12 @@ public class ParkingServiceImpl implements ParkingService {
 
     @Override
     public int updateParkingStatusOnFalse(Long id) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         return parkingRepo.updateParkingStatusOnFalse(id);
+    }
+    @Override
+    public int freeParkingPlace(){
+        int i = (int) ((100) - parkingRepo.carsOnPark());
+        return i;
     }
 }

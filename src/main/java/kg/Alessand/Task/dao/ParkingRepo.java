@@ -21,4 +21,9 @@ public interface ParkingRepo extends JpaRepository<Parking,Long> {
     @Query("UPDATE Parking p SET p.onPark = false where p.id = :id")
     int updateParkingStatusOnFalse(@Param("id")Long id);
 
+    @Modifying
+    @Query("Select count(onPark) from Parking where onPark = 'true'")
+    int carsOnPark();
+
+
 }

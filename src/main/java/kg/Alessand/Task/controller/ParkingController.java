@@ -38,5 +38,8 @@ public class ParkingController {
     private int updateParkingStatusOnFalse(@RequestParam("id")Integer id){
         return parkingService.updateParkingStatusOnFalse(false);
     }
-
+    @GetMapping("/allFreePlaceOnParking")
+    private int allFreePlace(){
+        return parkingService.freeParkingPlace();
+    }
 }

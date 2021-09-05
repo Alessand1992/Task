@@ -2,9 +2,6 @@ package kg.Alessand.Task.service;
 
 import kg.Alessand.Task.model.Parking;
 import kg.Alessand.Task.model.dto.ParkingDto;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
 import java.util.Collection;
 import java.util.List;
@@ -24,4 +21,6 @@ public interface ParkingService {
     int updateParkingStatusOnFalse(Boolean onPark);
 
     int updateParkingStatusOnFalse(Long id);
+
+    public int freeParkingPlace();
 }

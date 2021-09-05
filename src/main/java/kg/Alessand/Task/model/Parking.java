@@ -17,6 +17,7 @@ public class Parking {
     private int place;
     private Date startDate;
     private Date endDate;
+    @Column(name = "on_park")
     private boolean onPark;
 
 }
