@@ -7,6 +7,7 @@ import kg.Alessand.Task.model.dto.CarDto;
 import kg.Alessand.Task.model.dto.ParkingDto;
 import kg.Alessand.Task.service.ParkingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,6 +33,10 @@ public class ParkingController {
     @GetMapping("/findById")
     private ParkingDto findById(){
         return parkingService.findById();
+    }
+    @PutMapping("/updateParkingStatus")
+    private int updateParkingStatusOnFalse(@RequestParam("id")Integer id){
+        return parkingService.updateParkingStatusOnFalse(false);
     }
 
 }

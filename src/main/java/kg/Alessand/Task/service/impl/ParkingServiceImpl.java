@@ -8,6 +8,7 @@ import kg.Alessand.Task.service.ParkingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 @Service
 public class ParkingServiceImpl implements ParkingService {
@@ -49,5 +50,20 @@ public class ParkingServiceImpl implements ParkingService {
     @Override
     public ParkingDto findById() {
         return null;
+    }
+
+    @Override
+    public Collection<Parking> findAllCarOnParking() {
+        return parkingRepo.findAllCarOnParking();
+    }
+
+    @Override
+    public int updateParkingStatusOnFalse(Boolean onPark) {
+        return 0;
+    }
+
+    @Override
+    public int updateParkingStatusOnFalse(Long id) {
+        return parkingRepo.updateParkingStatusOnFalse(id);
     }
 }
