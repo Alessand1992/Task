@@ -19,7 +19,7 @@ public class CarController {
     @Autowired
     private CarService carService;
 
-    @PutMapping("/save")
+    @PostMapping("/save")
     private CarDto save(@ModelAttribute CarDto carDto){
         return carService.save(carDto);
     }

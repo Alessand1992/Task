@@ -21,7 +21,7 @@ import static kg.Alessand.Task.config.Swagger2Config.PARKING;
 public class ParkingController {
     @Autowired
     ParkingService parkingService;
-    @PutMapping("/save")
+    @PostMapping("/save")
     private ParkingDto save(@ModelAttribute ParkingDto parkingDto){
         return parkingService.save(parkingDto);
     }
